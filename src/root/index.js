@@ -1,15 +1,18 @@
 import React from 'react';
-import { I18nextProvider } from 'react-i18next';
-import App from '../../src/containers/App';
-import i18n from '../../src/framework/i18';
-
+import { View } from 'react-native';
+import App from '../containers/App';
+import I18 from './framework/i18';
+import styles from './styles'
 
 export default class Root extends React.Component {
-  render() {
+  render() {    
     return (
-      <I18nextProvider i18n={ i18n }>
-         <App/>
-      </I18nextProvider>
+      <View style={styles.container} >
+        <I18>
+          <App/>
+        </I18>
+      </View>
     );
   }
+
 }
