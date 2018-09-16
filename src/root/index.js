@@ -2,6 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import App from '../containers/App';
 import I18 from './framework/i18';
+import Router from './framework/router';
 import styles from './styles'
 
 export default class Root extends React.Component {
@@ -9,7 +10,9 @@ export default class Root extends React.Component {
     return (
       <View style={styles.container} >
         <I18>
-          <App/>
+          
+             <App/>
+          
         </I18>
       </View>
     );
