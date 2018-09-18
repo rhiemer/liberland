@@ -1,11 +1,11 @@
 import i18n from 'i18next';
-import { reactI18nextModule } from 'react-i18next';
-import {LANGUAGE_DEFAULT} from './constants';
-import languageDetector from './language-detector';
+import {reactI18nextModule } from 'react-i18next';
+import detectorLocaleCurrent from '../../framework/detectors/locale/current';
+import {LANGUAGE_DEFAULT} from '../constants';
 import languages from './languages';
 
 i18n
-  .use(languageDetector)
+  .use(detectorLocaleCurrent)
   .use(reactI18nextModule)
   .init({
     fallbackLng:LANGUAGE_DEFAULT,
