@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
 import { fromJS } from 'immutable';
-import runSagas from '../../framework/sagas';
+import createStoreComSagas from '../../framework/sagas/createStore';
 import sagas from '../sagas';
 import { createReducers } from '../reducer';
 
@@ -20,7 +20,7 @@ const createStoreApp = (enhancers,initialState = {}) => {
 };
 
 const createStoreESagas = (initialState = {}) => {        
-    return runSagas({        
+    return createStoreComSagas({        
         createStore:(enhancers)=>{return createStoreApp(enhancers,initialState);}           
     });     
  }; 
