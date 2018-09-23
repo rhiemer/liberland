@@ -1,11 +1,11 @@
 import React from 'react';
 import {Switch,Route,Redirect} from 'react-router-native';
-import App from '../containers/App';
+import HomePage from '../../pages/Home';
  
 export default () =>
   <Switch>
     <Route
       path="/home"
-      component={App}/>   
-    <Redirect from="/" to="/home"/>    
+      component={HomePage}/>   
+    <Redirect exact from="/" to="/home"/>    
   </Switch>  

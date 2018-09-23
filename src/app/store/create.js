@@ -10,12 +10,8 @@ const createStoreApp = (enhancers,initialState = {}) => {
       createReducers(),
       fromJS(initialState),
       enhancers
-    );     
-    // Extensions
-    store.asyncReducers = {};
-    if (module.hot) {
-       //hotAssingRedux('./replaceReducer',store);
-    }
+    );         
+    store.asyncReducers = {};   
     return store;   
 };
 
@@ -25,5 +21,6 @@ const createStoreESagas = (initialState = {}) => {
     });     
  }; 
 
+ 
 
  export default createStoreESagas;

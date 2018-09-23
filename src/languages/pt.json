@@ -1,5 +1,12 @@
 {    
-    "home": {
-        "title": "Bem Vindo"
-    }    
+  "home": {
+    "title": "Bem Vindo"
+  },
+  "components":{
+    "load":{
+      "loading": "Carregando...",
+      "loadMessage":"Carregando o módulo...",
+      "erroCarregando":"Erro ao carregar o módulo."    
+    }
+  }
 }
