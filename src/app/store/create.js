@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 import { fromJS } from 'immutable';
-import { runSagas } from '../../framework/sagas';
-import { sagas } from '../sagas';
+import runSagas from '../../framework/sagas';
+import sagas from '../sagas';
 import { createReducers } from '../reducer';
 
 
@@ -16,12 +16,11 @@ const createStoreApp = (enhancers,initialState = {}) => {
     if (module.hot) {
        //hotAssingRedux('./replaceReducer',store);
     }
-    return store;
+    return store;   
 };
 
 const createStoreESagas = (initialState = {}) => {        
-    runSagas({
-        sagas,
+    return runSagas({        
         createStore:(enhancers)=>{return createStoreApp(enhancers,initialState);}           
     });     
  }; 

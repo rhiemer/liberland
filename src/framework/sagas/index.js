@@ -1,23 +1,21 @@
 import {applyMiddleware,compose} from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
-const convertSagas = (sagas) =>{ 
-    let middlewares = [];
-    Array.isArray(sagas)?
-          middlewares.concat(sagas):
-              Object.keys(sagas).map(function(key) {middlewares.push(sagas[key]);});
-    return middlewares;         
+const concatSagas = (sagas,middlewares=[]) =>{     
+    Array.isArray(sagas)?       
+       middlewares.concat(sagas):
+        Object.keys(sagas).length == 0? 
+         middlewares.push(sagas):
+           Object.keys(sagas).map(function(key) {middlewares.push(sagas[key]);}); 
+    return middlewares;                   
 }
 
-const runSagas = ({sagas,createStore,runSaga=createSagaMiddleware()}) => { 
-    _sagas = convertSagas(sagas);
-    _sagas.push(runSaga);
-    let enhancers = [
-      applyMiddleware(..._sagas)
-    ];      
-    let storeMd = createStore(compose(...enhancers));   
-    storeMd.runSaga = runSaga.run;    
-    Object.keys(_sagas).map(function(key) { return obj[key]; }).map(storeMd.runSaga);   
+const runSagas = ({createStore,runSaga=createSagaMiddleware(),sagas=[]}) => {  
+    let _sagas = concatSagas(sagas);    
+    let storeMd = createStore(compose(...applyMiddleware(..._sagas)));   
+    storeMd.runSaga = runSaga.run;        
+    Object.keys(_sagas).map(function(key) { return _sagas[key]; }).map(storeMd.runSaga); 
+    return storeMd;  
 }
 
 export default runSagas;
