@@ -6,8 +6,7 @@ export default class TabBar extends React.PureComponent { // eslint-disable-line
    
 
   render() {       
-    const {children,renderChildren,...props} = {...this.props};
-    const renderChildren = renderChildren.bind(this);
+    const {children,renderChildren,...props} = {...this.props};    
     return (
       <View style={[styles.tabs, this.props.style, ]} {...props}>
           {this.props.tabs.map((tab, i) => {     
