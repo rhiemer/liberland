@@ -1,19 +1,18 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import {m} from '../../../src/util/messages'
+import {View,Text} from 'react-native';
+import Routers from './Routers';
+import TabBar from './TabBar';
 
-export default class Home extends React.PureComponent {   
+export default class Home extends React.Component {   
 
-  render() {
-     
+  render() {       
+    const {history} = {...this.props};   
     return (
-        <View>
-          <Text>{m('home.title')}</Text>
-          <Text>JJDHDGGDHFJJFFKKFOOOOOO</Text>
-          <Text>Open up App.js to start working on your app!</Text>
-          <Text>Changes you make will automatically reload.</Text>
-          <Text>Shake your phone to open the developer menu.</Text>
-        </View>
+       <View>         
+          <TabBar history={history} />
+          <Routers/>
+          <Text>TESTEtttttt</Text>
+       </View> 
     );
     
   }

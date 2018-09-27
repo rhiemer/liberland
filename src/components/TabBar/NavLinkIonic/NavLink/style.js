@@ -7,4 +7,7 @@ export default StyleSheet.create({
         justifyContent: 'center',
         paddingBottom: 5,
     },
+    row:{
+        flexDirection: 'row'
+    }
 })
