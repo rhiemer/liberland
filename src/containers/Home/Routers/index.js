@@ -3,11 +3,11 @@ import {Switch,Route,} from 'react-router-native';
 import Teste1 from '../../Teste1';
 import Teste2 from '../../Teste2';
  
-export default () =>
+export default ({path}) => 
   <Switch>
     <Route
       exact
-      path="/home/teste1"
+      path={`${path}/teste1`}
       component={Teste1}/>       
      <Route
       exact
