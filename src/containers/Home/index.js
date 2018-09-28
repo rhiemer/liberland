@@ -6,12 +6,14 @@ import TabBar from './TabBar';
 export default class Home extends React.Component {   
 
   render() {       
-    const {history} = {...this.props};   
+    const {history} = {...this.props};  
+    console.log('push'+JSON.stringify(this.props)); 
     return (
        <View>         
-          <TabBar history={history} />
+          <TabBar history={this.props.history} />
           <Routers/>
-          <Text>TESTEtttttt</Text>
+          <Text>dddddddddddddddddddd</Text>
+          <Text>vvvvvvvvvvvvvvvvv</Text>
        </View> 
     );
     

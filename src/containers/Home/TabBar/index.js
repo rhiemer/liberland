@@ -9,8 +9,8 @@ import {
 import FacebookTabBar from './FacebookTabBar';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 
-export default () => {
-  const {history} = {...this.props}; 
+export default ({history}) => {  
+  console.log('historytabBar'+history);
   return <ScrollableTabView
     style={{marginTop: 20, }}
     initialPage={1}
@@ -40,7 +40,7 @@ export default () => {
       <View style={styles.card}>
         <Text>Other nav</Text>
       </View>
-    </ScrollView>
+    </ScrollView>    
   </ScrollableTabView>;
 }
 

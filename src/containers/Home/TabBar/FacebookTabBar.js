@@ -5,7 +5,6 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-import { Link } from "react-router-native";
 import Icon from 'react-native-vector-icons/Ionicons';
 
 class FacebookTabBar extends React.Component {
@@ -40,24 +39,21 @@ class FacebookTabBar extends React.Component {
   }
 
   render() {
-    const {history} = {...this.props}; 
-    return <View style={[styles.tabs, this.props.style, ]}>
+      const {history} = {...this.props};
+    
+      return <View style={[styles.tabs, this.props.style, ]}>
       {this.props.tabs.map((tab, i) => {
-        console.log(tab);  
-        return 
-         <Link to="/home/teste1"> 
-            <TouchableOpacity key={tab} onPress={() => this.props.goToPage(i)} style={styles.tab}>        
-                <Icon
-                  name={tab}
-                  size={30}
-                  color={this.props.activeTab === i ? 'rgb(59,89,152)' : 'rgb(204,204,204)'}
-                  ref={(icon) => { this.icons[i] = icon; }}
-                />
-            </TouchableOpacity>
-          </Link>
-        ;
+        return <TouchableOpacity key={tab} onPress={() => {history.push("/home/teste1");this.props.goToPage(i)}} style={styles.tab}>
+          <Icon
+            name={tab}
+            size={30}
+            color={this.props.activeTab === i ? 'rgb(59,89,152)' : 'rgb(204,204,204)'}
+            ref={(icon) => { this.icons[i] = icon; }}
+          />
+        </TouchableOpacity>;
       })}
     </View>;
+
   }
 }
 
