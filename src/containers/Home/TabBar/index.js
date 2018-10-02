@@ -4,5 +4,4 @@ import ItemsTabBar from './items'
 
 export default ({children,history}) => 
   <TabView renderTabBar={() => <ItemsTabBar history={history} />} component={children} />
-  
-   
+

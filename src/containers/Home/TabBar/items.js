@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import { Link } from "react-router-native";
+import {View} from 'react-native';
 import LinkIonicons from "../../../components/TabViewLink/LinkIonicons"
 import styles from "../../../components/TabViewLink/styles"
 

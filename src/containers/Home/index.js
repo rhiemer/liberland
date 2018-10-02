@@ -13,7 +13,7 @@ export default class Home extends React.Component {
           <TabBar history={history}>
             <Routers path="/home" />
           </TabBar>          
-          <SpaceScreenWidth/>       
+          <SpaceScreenWidth/>      
        </View> 
     );
     
