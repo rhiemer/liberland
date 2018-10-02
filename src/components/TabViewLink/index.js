@@ -8,11 +8,20 @@ import {
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import styles from './styles';
 
-export default ({style,...props}) => 
-   <ScrollableTabView
-      style={[styles.tabBar,style]}
-      {...props} >
-     <ScrollView>      
-        <Text/>
-     </ScrollView> 
-  </ScrollableTabView>  
+
+export default ({component,style,...props}) => 
+{ 
+  const _children =component || <Text/>;
+  return(
+    <ScrollableTabView
+        style={[styles.tabBar,style]}
+        {...props} >
+      <ScrollView>      
+        {_children}
+      </ScrollView> 
+    </ScrollableTabView> 
+  );
+} 
+
+     
+  
