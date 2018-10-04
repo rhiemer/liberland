@@ -1,5 +1,23 @@
 {
   "expo": {
-    "sdkVersion": "27.0.0"
-  }
+   "android":{  
+      "package":"com.rodrigohiemer.liberland",
+      "config": {
+        "googleMaps": { "apiKey": "AIzaSyCoUIj27_C0aF3eKq4vhiqkwQcSUrNjN00" }
+      }
+   },
+   "description":"liberland",
+   "locales":{  
+
+   },
+   "name":"liberland",
+   "platforms":[  
+      "ios",
+      "android"
+   ],
+   "privacy":"public",
+   "sdkVersion":"27.0.0",
+   "slug":"liberland-218403",
+   "version":"1.0.0"
+  } 
 }
