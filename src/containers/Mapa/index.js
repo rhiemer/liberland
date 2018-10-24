@@ -1,8 +1,7 @@
 import React from "react";
-import { MapView } from "expo";
-import metrics from '../../styles/Metrics';
+import MapaBusca from '../../components/MapaBusca';
 
- export default class Mapa extends React.Component {
+ export default class Mapa extends React.PureComponent {
 
   constructor(props) {
     super(props);
@@ -53,21 +52,11 @@ import metrics from '../../styles/Metrics';
   }
   
 
-  render() {
-    
+  render() {    
     return (
-        <MapView
-          key="mapApp"
-          style={{ alignSelf: 'stretch', height: metrics.screenHeight }} 
-          provider="google"
-          region={{
-            latitude: 40.76727216,
-            longitude: -73.99392888,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421
-          }}>
+        <MapaBusca key="mapApp">
           {this.renderMarkers()}
-        </MapView>
+        </MapaBusca>
     );
   }
 }
