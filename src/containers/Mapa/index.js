@@ -1,4 +1,5 @@
 import React from "react";
+import { MapView } from "expo";
 import MapaBusca from '../../components/MapaBusca';
 
  export default class Mapa extends React.PureComponent {
@@ -54,10 +55,9 @@ import MapaBusca from '../../components/MapaBusca';
 
   render() {    
     return (
-        <MapaBusca key="mapApp">
+        <MapaBusca>
           {this.renderMarkers()}
         </MapaBusca>
     );
   }
 }
-

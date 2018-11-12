@@ -8,7 +8,7 @@ const verificarIconAtivoDefault = (to,pathname) => {
     return to === pathname;
 }
 
-export default class LinkIonicons extends React.PureComponent {   
+export default class LinkIonicons extends React.Component {   
     
   static defaultProps = {      
      sizeIcon:30,

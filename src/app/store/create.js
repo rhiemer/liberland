@@ -1,9 +1,7 @@
 import { createStore } from 'redux';
 import { fromJS } from 'immutable';
 import createStoreComSagas from '../../framework/sagas/createStore';
-import sagas from '../sagas';
 import { createReducers } from '../reducer';
-
 
 const createStoreApp = (enhancers,initialState = {}) => {    
     let store = createStore(
